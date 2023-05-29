@@ -7,6 +7,8 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils.js";
 import React from "react";
 import { connect } from "react-redux";
 import {setCurrentUser} from './redux/user/user.action';
+import { selectCurrentUser } from "./redux/cart/user.selector.js";
+import CheckoutPage from "./pages/checkout/checkout.component.jsx";
 
 class App extends React.Component {
 
@@ -43,7 +45,8 @@ const {setCurrentUser} = this.props;
           <Header />
           <Routes>
             <Route exact path="/" element={<Homepage />} />
-            <Route exact path="/shop" element={<ShopPage />} />
+            <Route exact path="/shop/*" element={<ShopPage />} />
+            <Route exact path="/checkout" element={<CheckoutPage />} />
             <Route exact path="/signIn" element={this.props.currentUser ? (<Navigate to={'/'} />) : (<SignInSignUpPage />) } />
           </Routes>
         </BrowserRouter> 
@@ -52,8 +55,8 @@ const {setCurrentUser} = this.props;
   }
 }
 
-const mapStateToProps = ({user}) => ({
-  currentUser: user.currentUser
+const mapStateToProps = (state) => ({
+  currentUser: selectCurrentUser(state)
 })
 
 const mapDispatchToProps = dispatch => ({

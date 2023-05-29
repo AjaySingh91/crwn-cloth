@@ -5,14 +5,6 @@ import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cart.acction";
 
 const CollectionItem =({ item,addItem }) => {
-    // <div className="Collection-item">
-    //     <div style={{  backgroundImage: `url(${imageUrl})` }} className="image" ></div>
-    
-    //     <div className="collection-footer">
-    //         <span className="name">{name}</span>
-    //         <span className="price">{price}</span>
-    //     </div>
-    // </div>
 
     const {name,imageUrl,price} = item;
 
