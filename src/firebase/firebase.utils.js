@@ -59,7 +59,7 @@ export const convertCollectionSnapshotToMap = (collections) =>{
       id: doc.id,
       title,
       items
-     }
+    }
   })
   console.log(transfermedCollection);
  return transfermedCollection.reduce( (accumulator, collection) =>{

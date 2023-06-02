@@ -33,8 +33,7 @@ const {setCurrentUser } = this.props;
         });
       }
     setCurrentUser(userAuth);
-    });
-  }
+    });}
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();

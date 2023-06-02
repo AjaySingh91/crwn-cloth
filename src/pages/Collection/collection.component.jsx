@@ -10,7 +10,7 @@ const CollectionPage = () => {
     
   const { collectionId } = useParams();
   const collections = useSelector((state) => selectCollection(collectionId)(state));
-console.log();
+// console.log();
 
 
 const { title,items} = collections;
