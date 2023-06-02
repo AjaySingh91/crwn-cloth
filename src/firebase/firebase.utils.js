@@ -38,6 +38,36 @@ if(!snapshot.exists){
 }
 
 firebase.initializeApp(config);
+ 
+export const addCollecctionAndDocuments = async (collectionKey, objectsToAdd) => {
+  const collectionRef = firestore.collection(collectionKey);
+
+  const batch = firestore.batch();
+  objectsToAdd.forEach(obj => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef ,obj);
+    // console.log(newDocRef);
+  })
+  return await batch.commit();
+}
+ 
+export const convertCollectionSnapshotToMap = (collections) =>{
+  const  transfermedCollection = collections.docs.map( doc =>{
+    const {title , items} = doc.data();
+    return{
+      routeNAme: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+     }
+  })
+  console.log(transfermedCollection);
+ return transfermedCollection.reduce( (accumulator, collection) =>{
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  } ,{});
+}
+
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();

@@ -17,7 +17,8 @@ const onToken = token => {
         name="CRWN Clothing Pvt. Ltd."
         billingAddress
         shippingAddress
-        image=""
+        // image="../../../public/logo192.png"
+        image="https://media.istockphoto.com/id/1193230490/vector/vintage-crown-hand-draw-graphic.jpg?s=1024x1024&w=is&k=20&c=RSRcbSOcRIJGYSuXGMeffC5o56SpZLmM0a5BmZt90tY="
         description={`your total is $${price}`}
         amount={priceForStripe}
         panelLabel="Pay Now"
