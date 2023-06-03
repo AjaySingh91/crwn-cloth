@@ -17,18 +17,25 @@ export const fetchCollectionsFailure = errorMessage => ({
     payload: errorMessage
 })
 
-export const fetchCollectionsStartAsync = () => {
-    return dispatch => {
-        const collecitonRef = firestore.collection('collecctions')
-        dispatch(fetchCollectionsStart());
-        collecitonRef.get().then(snapshot => {
-        //   console.log(snapshot);
-         const collectionMap = convertCollectionSnapshotToMap(snapshot)
-        // console.log(collectionMap);
-       dispatch(fetchCollectionsSuccess(collectionMap))
-        }).catch(error => dispatch(fetchCollectionsFailure(error.message)));
-    }
-}
+
+
+
+//****************   fetch using async Await  **********************/
+
+// export const fetchCollectionsStartAsync = () => {
+//     return dispatch => {
+//         const collecitonRef = firestore.collection('collecctions')
+//         dispatch(fetchCollectionsStart());
+//         collecitonRef.get().then(snapshot => {
+//         //   console.log(snapshot);
+//          const collectionMap = convertCollectionSnapshotToMap(snapshot)
+//         // console.log(collectionMap);
+//        dispatch(fetchCollectionsSuccess(collectionMap))
+//         }).catch(error => dispatch(fetchCollectionsFailure(error.message)));
+//     }
+// }
+ 
+
 
 //  for fetchinig using url from firebase
  // fetch('https://firestore.googleapis.com/v1/projects/crown-db-8f6e1/databases/(default)/documents/collections')
