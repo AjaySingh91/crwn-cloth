@@ -1,6 +1,6 @@
 import ShopActionTypes from "./shop.type";
-import { firestore } from "../../firebase/firebase.utils";
-import { convertCollectionSnapshotToMap } from "../../firebase/firebase.utils";
+// import { firestore } from "../../firebase/firebase.utils";
+// import { convertCollectionSnapshotToMap } from "../../firebase/firebase.utils";
 
 export const fetchCollectionsStart = collectionMap => ({
     type: ShopActionTypes.FETCH_COLLECTIONS_START
@@ -37,7 +37,7 @@ export const fetchCollectionsFailure = errorMessage => ({
  
 
 
-//  for fetchinig using url from firebase
+//  for fetching using url from firebase
  // fetch('https://firestore.googleapis.com/v1/projects/crown-db-8f6e1/databases/(default)/documents/collections')
         // .then(Response => Response.json())
         // .then(collections => console.log(collections))

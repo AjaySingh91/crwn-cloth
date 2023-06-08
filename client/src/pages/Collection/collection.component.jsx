@@ -7,11 +7,8 @@ import CollectionItem from  '../../Components/collection-item/collection-item.co
 
 const CollectionPage = () => {
 
-    
-  const { collectionId } = useParams();
-  const collections = useSelector((state) => selectCollection(collectionId)(state));
-// console.log();
-
+const { collectionId } = useParams();
+const collections = useSelector((state) => selectCollection(collectionId)(state));
 
 const { title,items} = collections;
 
@@ -25,7 +22,6 @@ const { title,items} = collections;
         </div>
     </div>)
 }
-
 
 // // const MapStateToProps = (state) => (
   

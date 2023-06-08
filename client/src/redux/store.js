@@ -4,7 +4,7 @@ import rootReducer from "./root-reducer";
 import persistStore from "redux-persist/es/persistStore";
 // import thunk from "redux-thunk";
 import createSagaMiddleware from 'redux-saga'
-import { fetchCollecctionStart } from "./shop/shop.saga";
+import { fetchCollecctionStart } from "./shop/shop.sagas";
 
 // const Middleware = [thunk];
 

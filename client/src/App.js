@@ -13,7 +13,7 @@ import CollectionPage from "./pages/Collection/collection.component.jsx";
 import { createStructuredSelector } from "reselect";
 
 class App extends React.Component {
-
+    
   unsubscribeFromAuth = null;
 
   componentDidMount() {
